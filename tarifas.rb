@@ -1,12 +1,14 @@
 require './docentes.rb'
 
 
+
 class Tarifa < Docentes
     attr_accessor :nombre
 
     def initialize(nombre)
         @nombre = nombre
         @docentes = Array.new
+        
     end 
 
     def nuevoDocente(rut, nombre, apellido, grado, antiguedad, horas_trabajadas,minutos_tardanzas)
@@ -100,23 +102,4 @@ class Tarifa < Docentes
 
 
 end
-
-
-tarifa = Tarifa.new('Ejemplo')
-tarifa.nuevoDocente('999999-k', 'Juan', 'Silva', 'Bachiller', 2, 100, 2)
-tarifa.nuevoDocente('888888-9', 'Pedro', 'Tapia', 'Maestria',5 , 80, 19)
-tarifa.nuevoDocente('777777-8', 'Carla', 'Contreras','Titulado',3 ,75 ,0)
-tarifa.nuevoDocente('6666666-7', 'Alicia', 'Gonzalez', 'Doctorado',7, 90, 12)
-
-
-
-docentes = tarifa.nominaDocentes
-
-docentes = tarifa.docentesGrado('Bachiller')
-
-grado = 'Bachiller'
-sueldoHora = tarifa.pagoGrado(grado)
-
-
-pagos = tarifa.docentesGrado(grado)
 
