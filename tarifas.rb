@@ -120,5 +120,3 @@ sueldoHora = tarifa.pagoGrado(grado)
 
 pagos = tarifa.docentesGrado(grado)
 
-
-# rut, nombre, apellido, grado, antiguedad, horas_trabajadas,minutos_tardanzas
