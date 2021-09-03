@@ -1,5 +1,9 @@
-class Tarifa
+require './docentes.rb'
+
+
+class Tarifa < Docentes
     def initialize
+        attr_accessor :nombre
         @nombre = nombre
         @docentes = Array.new
     end 
@@ -76,3 +80,20 @@ class Tarifa
         docentesPorGrado = Array.new
     end
 
+    for docente in @docentes 
+        if docente.grado == grado
+            docentesPorGrado.push(docente)
+        end
+    end
+
+    return docentesPorGrado
+end
+
+    def pagoDocentes
+        pagos = Array.new
+        for docente in @docentes 
+        pagos.push({'docente': docente, 'pago': sueldo(docente)})
+        end
+        return pagos
+    end
+end
