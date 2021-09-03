@@ -9,7 +9,7 @@ class Tarifa
         @docentes.push(docente)
     end 
 
-    def procentajeAumento(antiguedad)
+    def porcentajeAumento(antiguedad)
         porcentaje = 0
 
         case antiguedad
@@ -63,4 +63,16 @@ class Tarifa
             return sueldoHora
     end
 
-            
+    def pagoMensual (docente)
+        sueldo = pagoGrado(docente.grado) + porcentajeAumento(docente.antiguedad)+ bonoPorAtraso(docente.minutos_tardanzas)
+        return sueldo
+    end
+    
+    def nominaDocentes
+        return @docentes
+    end
+
+    def docentesGrado(grado)
+        docentesPorGrado = Array.new
+    end
+
